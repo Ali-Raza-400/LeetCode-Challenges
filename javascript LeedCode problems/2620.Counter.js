@@ -2,13 +2,11 @@
 
 // Example 1:
 
-// Input: 
-// n = 10 
+// Input:
+// n = 10
 // ["call","call","call"]
 // Output: [10,11,12]
-// Explanation: 
-
-
+// Explanation:
 
 // Solution
 
@@ -17,18 +15,28 @@
  * @return {Function} counter
  */
 var createCounter = function (n) {
-    let count = -1
+  let count = -1;
 
-    return function () {
-        count++;
-        return n + count
-
-    };
+  return function () {
+    count++;
+    return n + count;
+  };
 };
 
-//Explanation 
+// solution 2
+var createCounter = function (n) {
+  return function () {
+    return n++;
+  };
+};
 
-    // createCounter(10) returns a function that increments count by 1 each time it is called.
-    // The function starts at -1, so when it is first called, it returns 10.
-    // When it is called again, count is incremented to 0, and it returns 11.
-    // This pattern continues, returning n + count each time it is called.
+// solution 3
+
+const createCounter = (n) => () => n++;
+
+//Explanation
+
+// createCounter(10) returns a function that increments count by 1 each time it is called.
+// The function starts at -1, so when it is first called, it returns 10.
+// When it is called again, count is incremented to 0, and it returns 11.
+// This pattern continues, returning n + count each time it is called.
